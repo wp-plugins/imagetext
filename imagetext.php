@@ -166,23 +166,6 @@ function fpx_imagetext_install() {
 }
 
 
-/** uninstall functions **/
-function fpx_imagetext_uninstall() {
-	delete_option('fpx_imagetext_alpha');
-	delete_option('fpx_imagetext_alttext');
-	delete_option('fpx_imagetext_backgroundcolor');
-	delete_option('fpx_imagetext_class');
-	delete_option('fpx_imagetext_fontsize');
-	delete_option('fpx_imagetext_image_x');
-	delete_option('fpx_imagetext_image_y');
-	delete_option('fpx_imagetext_textcolor');
-	delete_option('fpx_imagetext_text_x');
-	delete_option('fpx_imagetext_text_y');
-	delete_option('fpx_imagetext_ttffont');
-	delete_option('fpx_imagetext_localoverridesglobal');
-}
-
-
 /** help function for checking POST variable 
   * @param $pc name of var
   * @return boolean if it is correct
@@ -216,7 +199,7 @@ function fpx_imagetext_adminpanel() {
 		
 		// clear file cache and set font path
 		clearstatcache();	
-		$lcFontDir = plugin_dir_path(__FILE__)."fonts";
+		$lcFontDir = WP_PLUGIN_DIR."/imagetext/fonts";
 		
 		// --- we run into update
 		if (isset($_POST["submit"])) {

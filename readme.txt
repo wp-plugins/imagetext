@@ -2,7 +2,9 @@
 Contributors: flashpixx
 Tags: spam, secure, imprint, impressum, image
 Requires at least: 2.5
-Tested up to: 2.9
+Tested up to: 3.0.1
+Stable tag: 0.2
+
 
 With this plugin text can be pasted as a picture in an article or page to protect mailaddresses or postaddresse against automated crawler.
 
