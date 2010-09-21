@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-21 12:23+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../imagetext.php:165
+msgid ""
+"The text in this space was converted to guard against spam robots into an "
+"image"
+msgstr ""
+
+#: ../imagetext.php:237
+msgid "Configuration and Usage"
+msgstr ""
+
+#: ../imagetext.php:238
+msgid ""
+"If you like the plugin and want to support my work, I'd appreciate a "
+"donation through the following link very much. A donation encouraged me to "
+"develop my work further and to thank you again and again so the community."
+msgstr ""
+
+#: ../imagetext.php:246
+msgid ""
+"Warning: It seems as if the PHP extension GD, Freetype module and / or the "
+"PNG support is not available!"
+msgstr ""
+
+#: ../imagetext.php:315
+msgid "Usage"
+msgstr ""
+
+#: ../imagetext.php:316
+msgid ""
+"The command <strong>[imgtxt]your content[/imgtxt]</strong> pastes the text "
+"as an image in your document."
+msgstr ""
+
+#: ../imagetext.php:317
+msgid ""
+"The following options may also be passed as parameters to the opening tag to "
+"adjust the current formatting. If no parameters are specified in the tags, "
+"the global values are used. In parenthesis the parameter name is specified. "
+"The use is then: <strong>[imgtxt parameter=value parameter=value ...]</"
+"strong>"
+msgstr ""
+
+#: ../imagetext.php:326
+msgid "tag options can override global options"
+msgstr ""
+
+#: ../imagetext.php:331
+msgid "image x-dimension"
+msgstr ""
+
+#: ../imagetext.php:332
+msgid "image y-dimension"
+msgstr ""
+
+#: ../imagetext.php:337
+msgid "text x-position"
+msgstr ""
+
+#: ../imagetext.php:338
+msgid "text y-position"
+msgstr ""
+
+#: ../imagetext.php:343
+msgid "background color"
+msgstr ""
+
+#: ../imagetext.php:344
+msgid "text color"
+msgstr ""
+
+#: ../imagetext.php:345
+msgid "background color transparent"
+msgstr ""
+
+#: ../imagetext.php:350
+msgid "class for img tag"
+msgstr ""
+
+#: ../imagetext.php:351
+msgid "alternativ description for img tag"
+msgstr ""
+
+#: ../imagetext.php:352
+msgid "fontsize"
+msgstr ""
+
+#: ../imagetext.php:370
+msgid "used font file"
+msgstr ""
+
+#: ../imagetext.php:372
+msgid "default font"
+msgstr ""
+
+#: ../imagetext.php:378
+msgid "upload font file"
+msgstr ""
+
+#: ../imagetext.php:382
+msgid ""
+"You can not upload any file. Please change the permission to 777 (rwx rwx "
+"rwx) for the fonts-directory in plugin path"
+msgstr ""
+
+#: ../imagetext.php:386
+msgid "delete font file"
+msgstr ""
+
+#: ../imagetext.php:388
+msgid "no deletion"
+msgstr ""
+
+#: ../imagetext.php:399
+msgid "Save Changes"
+msgstr ""

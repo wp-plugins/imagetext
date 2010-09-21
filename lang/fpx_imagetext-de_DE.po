@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Imagtext\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-21 12:00+0200\n"
+"PO-Revision-Date: 2010-09-21 12:19+0100\n"
+"Last-Translator: Philipp Kraus <philipp.kraus@flashpixx.de>\n"
+"Language-Team: Philipp Kraus <philipp.kraus@flashpixx.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../imagetext.php:165
+msgid "The text in this space was converted to guard against spam robots into an image"
+msgstr "Der Text in diesem Bereich wurde zur Abwehr von Spambot als Bild erzeugt"
+
+#: ../imagetext.php:237
+msgid "Configuration and Usage"
+msgstr "Konfiguration und Benutzung"
+
+#: ../imagetext.php:238
+msgid "If you like the plugin and want to support my work, I'd appreciate a donation through the following link very much. A donation encouraged me to develop my work further and to thank you again and again so the community."
+msgstr "Falls Ihnen das Plugin gefällt und Sie möchten meine Arbeit unterstützen, würde ich mich sehr über eine Spende freuen. Mit der Spende unterstützen Sie meine weitere Arbeit und der Dank geht damit auch an die Community"
+
+#: ../imagetext.php:246
+msgid "Warning: It seems as if the PHP extension GD, Freetype module and / or the PNG support is not available!"
+msgstr "Warnung: Es scheint, dass die PHP Module GD, Freetype und / oder PNG Support nicht vorhanden sind!"
+
+#: ../imagetext.php:315
+msgid "Usage"
+msgstr "Konfiguration"
+
+#: ../imagetext.php:316
+msgid "The command <strong>[imgtxt]your content[/imgtxt]</strong> pastes the text as an image in your document."
+msgstr "Das Kommando <strong>[imgtxt]Inhalt[/imgtxt]</strong> erstellt aus dem Text ein Bild in der Seite / Post"
+
+#: ../imagetext.php:317
+msgid "The following options may also be passed as parameters to the opening tag to adjust the current formatting. If no parameters are specified in the tags, the global values are used. In parenthesis the parameter name is specified. The use is then: <strong>[imgtxt parameter=value parameter=value ...]</strong>"
+msgstr "Die nachfolgenden Optionen können auch den öffnenden Tag direkt übergeben werden, um die aktuelle Formatierung zu setzen. Ist kein Parameter in dem Tag gesetzt, werden hier gesetzten Parameter verwendet. In den Klammern ist der Parametername angegeben. Die Benutzung ist dann: <strong>[imgtxt Parametername=Wert Parametername=Wert ...]</strong>"
+
+#: ../imagetext.php:326
+msgid "tag options can override global options"
+msgstr "globale Einstellungen können durch Tag Parameter überschrieben werden"
+
+#: ../imagetext.php:331
+msgid "image x-dimension"
+msgstr "Bildbreite (X-Wert)"
+
+#: ../imagetext.php:332
+msgid "image y-dimension"
+msgstr "Bildhöhe (Y-Wert)"
+
+#: ../imagetext.php:337
+msgid "text x-position"
+msgstr "Textposition (X-Wert)"
+
+#: ../imagetext.php:338
+msgid "text y-position"
+msgstr "Textposition (Y-Wert)"
+
+#: ../imagetext.php:343
+msgid "background color"
+msgstr "Hintergrundfarbe"
+
+#: ../imagetext.php:344
+msgid "text color"
+msgstr "Schriftfarbe"
+
+#: ../imagetext.php:345
+msgid "background color transparent"
+msgstr "Tranzparenz für Hintergrundfarbe"
+
+#: ../imagetext.php:350
+msgid "class for img tag"
+msgstr "CSS Klasse für img-Tag"
+
+#: ../imagetext.php:351
+msgid "alternativ description for img tag"
+msgstr "alternative Beschreibung für img-Tag"
+
+#: ../imagetext.php:352
+msgid "fontsize"
+msgstr "Schriftgröße"
+
+#: ../imagetext.php:370
+msgid "used font file"
+msgstr "benutze Schriftdatei"
+
+#: ../imagetext.php:372
+msgid "default font"
+msgstr "Standardschrift"
+
+#: ../imagetext.php:378
+msgid "upload font file"
+msgstr "hochzuladende Datei"
+
+#: ../imagetext.php:382
+msgid "You can not upload any file. Please change the permission to 777 (rwx rwx rwx) for the fonts-directory in plugin path"
+msgstr "Es können keine Dateien hochgeladen werden. Bitte ändern Sie die Berechtigung auf 777 (rwx rwx rwx) für das Schriftenverzeichnis im Plugin-Pfad"
+
+#: ../imagetext.php:386
+msgid "delete font file"
+msgstr "zu löschende Schrift"
+
+#: ../imagetext.php:388
+msgid "no deletion"
+msgstr "nicht löschen"
+
