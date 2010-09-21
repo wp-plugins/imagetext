@@ -22,7 +22,7 @@ With this plugin text can be pasted as a picture in an article or page. This is 
 
 == Changelog == 
 
-= 0.2
+= 0.2 =
 
 * adding translation (english, german)
 * fixing some problems with the  wordpress codex
