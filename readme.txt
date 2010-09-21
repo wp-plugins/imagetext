@@ -3,7 +3,7 @@ Contributors: flashpixx
 Tags: spam, secure, imprint, impressum, image
 Requires at least: 2.7
 Tested up to: 3.0.1
-Stable tag: 0.2
+Stable tag: trunk
 License: GPLv3
 
 With this plugin text can be pasted as a picture in an article or page to protect mailaddresses or postaddresse against automated crawler.
@@ -22,7 +22,7 @@ With this plugin text can be pasted as a picture in an article or page. This is 
 
 == Changelog == 
 
-= 0.2
+= 0.2 =
 
 * adding translation (english, german)
 * fixing some problems with the  wordpress codex
