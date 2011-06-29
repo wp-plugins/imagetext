@@ -106,7 +106,10 @@ class fpx_imagetext_filter {
 		// create has within the session and create the URL
 		$lcHash				= md5($data);
 		$urldata["chof"]	= "png";
-		$_SESSION[$lcHash] 	= "https://chart.googleapis.com/chart?".http_build_query($urldata);
+		
+		// the &amp; code creates some errors in the Google call, so we subsitute it to &
+		$_SESSION[$lcHash] 	= str_replace("&amp;", "&", "https://chart.googleapis.com/chart?".http_build_query($urldata));
+		
 
 		// create img tag only with hash
 		$lcReturn  = "<img src=\"".plugins_url("image.php?h=".$lcHash, __FILE__)."\"";
