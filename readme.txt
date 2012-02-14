@@ -2,8 +2,8 @@
 Contributors: flashpixx
 Tags: spam, secure, imprint, impressum, image, latex, text, qr code
 Requires at least: 2.7
-Tested up to: 3.1.3
-Stable tag: trunk
+Tested up to: 3.3.1
+Stable tag: 0.35
 License: GPLv3
 
 With this plugin text can be pasted as a picture in an article or page to protect mailaddresses or postaddresse against automated crawler.
@@ -18,10 +18,14 @@ has got also a widget for the theme, that can create an qr code with the permali
 
 1.  Upload the folder to the "/wp-content/plugins/" directory
 2.  Activate the plugin through the 'Plugins' menu in WordPress
-3.  Use in your content the tag [imgtxt] your image content [/imgtxt] to create images (other options see at the plugin admin panel).
+3.  Use in your content the tag [imgtxt] your image content [/imgtxt] to create images (options see at the plugin admin panel).
 
 
 == Changelog == 
+
+= 0.35 =
+
+* fixing some array errors
 
 = 0.3 =
 

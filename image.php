@@ -30,6 +30,9 @@ if (!isset($_GET["h"]))
 	die("error");
 $lcHash = $_GET["h"];
 
+if (!isset($_SESSION[$lcHash]))
+    die("error");
+
 $url = $_SESSION[$lcHash];
 if ( (!is_string($url)) && (empty($url)) )
 	die("error");
