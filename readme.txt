@@ -3,7 +3,7 @@ Contributors: flashpixx
 Tags: spam, secure, imprint, impressum, image, latex, text, qr code
 Requires at least: 2.7
 Tested up to: 3.3.1
-Stable tag: trunk
+Stable tag: 0.35
 License: GPLv3
 
 With this plugin text can be pasted as a picture in an article or page to protect mailaddresses or postaddresse against automated crawler.
