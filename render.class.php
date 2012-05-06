@@ -42,6 +42,7 @@ class fpx_imagetext_render {
 		add_settings_field("text_css",                __("CSS class", "fpx_imagetext")." (cssclass)",                 get_class()."::render_textcss",                  "fpx_imagetext_optiontext",      "fpx_imagetext_option");
 		add_settings_field("text_width",              __("image width", "fpx_imagetext")." (width)",                  get_class()."::render_textwidth",                "fpx_imagetext_optiontext",      "fpx_imagetext_option");
 		add_settings_field("text_height",             __("image height", "fpx_imagetext")." (height)",                get_class()."::render_textheight",               "fpx_imagetext_optiontext",      "fpx_imagetext_option");
+		add_settings_field("text_htmldecode",         __("HTML code remove", "fpx_imagetext"). " (htmldecode)",       get_class()."::render_texthtmldecode", "fpx_imagetext_optiontext",      "fpx_imagetext_option");
 		add_settings_field("text_localglobal",        __("options can be overwritten", "fpx_imagetext"),              get_class()."::render_textlocaloverridesglobal", "fpx_imagetext_optiontext",      "fpx_imagetext_option");
 
 		add_settings_section("fpx_imagetext_option",  __("LaTeX Options", "fpx_imagetext"),                           get_class()."::render_latexsection",              "fpx_imagetext_optionlatex");
@@ -60,6 +61,7 @@ class fpx_imagetext_render {
 		add_settings_field("qrcode_css",              __("CSS class", "fpx_imagetext")." (cssclass)",                 get_class()."::render_qrcodecss",                  "fpx_imagetext_optionqrcode",      "fpx_imagetext_option");
 		add_settings_field("qrcode_size",             __("image size", "fpx_imagetext")." (size)",                    get_class()."::render_qrcodesize",               "fpx_imagetext_optionqrcode",      "fpx_imagetext_option");
 		add_settings_field("qrcode_errlevel",         __("error level", "fpx_imagetext")." (errorlevel)",             get_class()."::render_qrcodeerrlevel",               "fpx_imagetext_optionqrcode",      "fpx_imagetext_option");
+		add_settings_field("qrcode_htmldecode",       __("HTML code remove", "fpx_imagetext"). " (htmldecode)",     get_class()."::render_qrcodehtmldecode", "fpx_imagetext_optionqrcode",      "fpx_imagetext_option");
 		add_settings_field("qrcode_localglobal",      __("options can be overwritten", "fpx_imagetext"),              get_class()."::render_qrcodelocaloverridesglobal", "fpx_imagetext_optionqrcode",      "fpx_imagetext_option");		
 
 	}
@@ -76,7 +78,7 @@ class fpx_imagetext_render {
     
 	static function validate($pa) {
 		//print_r($pa);
-		//die("xx");
+		//die(" ");
 		
 		$options = get_option("fpx_imagetext_option");
 		
@@ -89,6 +91,7 @@ class fpx_imagetext_render {
 		$options["text"]["width"]					= abs(intval($pa["text_width"]));
 		$options["text"]["height"]					= abs(intval($pa["text_height"]));
 		$options["text"]["localoverridesglobal"]	= !empty($pa["text_localoverridesglobal"]);
+		$options["text"]["htmldecode"]				= !empty($pa["text_htmldecode"]);
 		
 		// latex options
 		$options["latex"]["alttext"] 				= $pa["latex_alttext"];
@@ -106,6 +109,7 @@ class fpx_imagetext_render {
 		$options["qrcode"]["errorlevel"]			= $pa["qrcode_errlevel"];
 		$options["qrcode"]["size"]					= abs(intval($pa["qrcode_size"]));
 		$options["qrcode"]["localoverridesglobal"]	= !empty($pa["qrcode_localoverridesglobal"]);
+		$options["qrcode"]["htmldecode"]			= !empty($pa["qrcode_htmldecode"]);
 		
 		return $options;
 	}
@@ -171,6 +175,11 @@ class fpx_imagetext_render {
     static function render_textwidth() {
         $options = get_option("fpx_imagetext_option");
         echo "<input name=\"fpx_imagetext_option[text_width]\" size=\"10\" type=\"text\" value=\"".$options["text"]["width"]."\" />";        
+    }
+
+    static function render_texthtmldecode() {
+        $options = get_option("fpx_imagetext_option");
+        echo "<input name=\"fpx_imagetext_option[text_htmldecode]\" type=\"checkbox\" value=\"1\" ".($options["text"]["htmldecode"] ? "checked" : null)." />";
     }
     
     static function render_textlocaloverridesglobal() {
@@ -255,6 +264,11 @@ class fpx_imagetext_render {
         echo "<option value=\"Q\" ".($options["qrcode"]["errorlevel"] == "Q" ? "selected" : null).">Q (".__("recovery of up to 25% data loss", "fpx_imagetext").")</option>";
         echo "<option value=\"H\" ".($options["qrcode"]["errorlevel"] == "H" ? "selected" : null).">H (".__("recovery of up to 30% data loss", "fpx_imagetext").")</option>";
         echo "</select>";
+    }
+
+    static function render_qrcodehtmldecode() {
+        $options = get_option("fpx_imagetext_option");
+        echo "<input name=\"fpx_imagetext_option[qrcode_htmldecode]\" type=\"checkbox\" value=\"1\" ".($options["qrcode"]["htmldecode"] ? "checked" : null)." />";
     }
 
     static function render_qrcodelocaloverridesglobal() {

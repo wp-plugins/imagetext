@@ -20,119 +20,130 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Image Text\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-25 23:34+0200\n"
-"PO-Revision-Date: 2011-06-25 20:05+0200\n"
-"Last-Translator: Philipp Kraus <philipp.kraus@flashpixxde>\n"
+"POT-Creation-Date: 2012-05-06 18:37+0200\n"
+"PO-Revision-Date: 2012-05-06 18:45+0100\n"
+"Last-Translator: Philipp Kraus <philipp.kraus@flashpixx.de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: imagetext.php:49
-msgid "The text in this space was converted to guard against spam robots into an image"
-msgstr "Der Text in diesem Bereich ist als Bild codiert, um ihn vor Spambots zu schützen"
-
-#: imagetext.php:60
-msgid "LaTeX formula"
-msgstr "LaTeX Formel"
-
-#: imagetext.php:70
-msgid "QR code"
-msgstr "QR Code"
+"Language-Team: \n"
 
 #: render.class.php:37
 msgid "Text Options"
 msgstr "Text Optionen"
 
-#: render.class.php:38 render.class.php:48 render.class.php:59
-#: widget.class.php:72
+#: render.class.php:38
+#: render.class.php:49
+#: render.class.php:60
+#: widget.class.php:74
 msgid "alternate image text"
 msgstr "alternativer Bildtext"
 
-#: render.class.php:39 render.class.php:49
+#: render.class.php:39
+#: render.class.php:50
 msgid "background color"
 msgstr "Hintergrundfarbe"
 
-#: render.class.php:40 render.class.php:50
+#: render.class.php:40
+#: render.class.php:51
 msgid "transparant background color"
 msgstr "Hintergrundfarbe Transparenz"
 
-#: render.class.php:41 render.class.php:51
+#: render.class.php:41
+#: render.class.php:52
 msgid "text color"
 msgstr "Textfarbe"
 
-#: render.class.php:42 render.class.php:52 render.class.php:60
-#: widget.class.php:73
+#: render.class.php:42
+#: render.class.php:53
+#: render.class.php:61
+#: widget.class.php:75
 msgid "CSS class"
 msgstr "CSS Klasse"
 
-#: render.class.php:43 render.class.php:53
+#: render.class.php:43
+#: render.class.php:54
 msgid "image width"
 msgstr "Bildbreite"
 
-#: render.class.php:44 render.class.php:54
+#: render.class.php:44
+#: render.class.php:55
 msgid "image height"
 msgstr "Bildhöhe"
 
-#: render.class.php:45 render.class.php:55 render.class.php:62
+#: render.class.php:45
+#: render.class.php:64
+msgid "HTML code remove"
+msgstr "HTML Code entfernen"
+
+#: render.class.php:46
+#: render.class.php:56
+#: render.class.php:65
 msgid "options can be overwritten"
 msgstr "Optionen können überschrieben werden"
 
-#: render.class.php:47
+#: render.class.php:48
 msgid "LaTeX Options"
 msgstr "LaTeX Optionen"
 
-#: render.class.php:58
+#: render.class.php:59
 msgid "QR Code Options"
 msgstr "QR Code Optionen"
 
-#: render.class.php:61 widget.class.php:71
+#: render.class.php:62
+#: widget.class.php:73
 msgid "image size"
 msgstr "Bildgröße"
 
-#: render.class.php:62 widget.class.php:77
+#: render.class.php:63
+#: widget.class.php:77
 msgid "error level"
 msgstr "Fehlerlevel"
 
-#: render.class.php:114
+#: render.class.php:120
 msgid "Configuration and Usage"
 msgstr "Konfiguration und Benutzung"
 
-#: render.class.php:115
+#: render.class.php:121
 msgid "If you like the plugin and want to support my work, I'd appreciate a donation through the following link very much. A donation encouraged me to develop my work further and to thank you again and again so the community."
 msgstr "Falls Ihnen das Plugin gefällt und Sie möchten meine Arbeit unterstützen, würde ich mich sehr über eine Spende freuen. Mit der Spende unterstützen Sie meine weitere Arbeit und der Dank geht damit auch an die Community"
 
-#: render.class.php:122
+#: render.class.php:128
 msgid "The following options may also be passed as parameters to the opening tag to adjust the current formatting. If no parameters are specified in the tags, the global values are used. In parenthesis the parameter name is specified. The use is then: <strong>[imgtxt parameter=value parameter=value ...]</strong>."
-msgstr "Die nachfolgenden Optionen können auch dem öffnenden Tag direkt übergeben werden, um die aktuelle Formatierung zu setzen. Ist kein Parameter in dem Tag gesetzt, werden hier gesetzten Parameter verwendet. In den Klammern ist der Parametername angegeben. Die Benutzung ist dann: <strong>[imgtxt Parametername=Wert Parametername=Wert ...]</strong>"
+msgstr "Die nachfolgenden Optionen können auch dem öffnenden Tag direkt äbergeben werden, um die aktuelle Formatierung zu setzen. Ist kein Parameter in dem Tag gesetzt, werden hier gesetzten Parameter verwendet. In den Klammern ist der Parametername angegeben. Die Benutzung ist dann: <strong>[imgtxt Parametername=Wert Parametername=Wert ...]</strong>"
 
-#: render.class.php:136
+#: render.class.php:142
 msgid "This options can be set with the call <strong>[imgtxt type=text]your content[/imgtxt]</strong>"
 msgstr "Die Optionen können mit dem Aufruf <strong>[imgtxt type=text]Inhalt[/imgtxt]</strong> gesetzt werden"
 
-#: render.class.php:183
+#: render.class.php:194
 msgid "This options can be set with the call <strong>[imgtxt type=latex]your content[/imgtxt]</strong>"
 msgstr "Die Optionen können mit dem Aufruf <strong>[imgtxt type=latex]Inhalt[/imgtxt]</strong> gesetzt werden"
 
-#: render.class.php:230
+#: render.class.php:241
 msgid "This options can be set with the call <strong>[imgtxt type=qrcode]your content[/imgtxt]</strong>. If the content is empty, the permalink (page url) is used"
 msgstr "Die Optionen können mit dem Aufruf <strong>[imgtxt type=qrcode]Inhalt[/imgtxt]</strong> gesetzt werden. Wenn der Inhalt leer ist, dann wird der Permalink (Seitenurl) verwendet"
 
-#: render.class.php:253 widget.class.php:77
+#: render.class.php:262
+#: widget.class.php:77
 #, php-format
 msgid "recovery of up to 7% data loss"
 msgstr "bis zu 7% Daten können rekonstruiert werden"
 
-#: render.class.php:254 widget.class.php:77
+#: render.class.php:263
+#: widget.class.php:77
 #, php-format
 msgid "recovery of up to 15% data loss"
 msgstr "bis zu 15% Daten können rekonstruiert werden"
 
-#: render.class.php:255 widget.class.php:77
+#: render.class.php:264
+#: widget.class.php:77
 #, php-format
 msgid "recovery of up to 25% data loss"
 msgstr "bis zu 25% Daten können rekonstruiert werden"
 
-#: render.class.php:256 widget.class.php:77
+#: render.class.php:265
+#: widget.class.php:77
 #, php-format
 msgid "recovery of up to 30% data loss"
 msgstr "bis zu 30% Daten können rekonstruiert werden"
@@ -141,14 +152,15 @@ msgstr "bis zu 30% Daten können rekonstruiert werden"
 msgid "creates an image with the QR code of the page url"
 msgstr "Erstellt ein Bild mit einem QR Code der Seiten URL"
 
-#: widget.class.php:74
+#: widget.class.php:76
 msgid "API call"
 msgstr "API Aufruf"
 
-#: widget.class.php:74
+#: widget.class.php:76
 msgid "without secure connection (http)"
 msgstr "ohne verschlüsselte Verbindung (http)"
 
-#: widget.class.php:74
+#: widget.class.php:76
 msgid "with secure connection (https)"
 msgstr "mit verschlüsselter Verbindung (https)"
+
