@@ -76,13 +76,16 @@ class fpx_imagetext_filter {
 
 		// set the option data to URL options
 		$urldata = array();
-		$data = utf8_encode(utf8_decode(trim($pa[2])));	
+		$data    = mb_convert_encoding(trim($pa[2]), "UTF-8", "auto");
+		if ($optiondata["htmldecode"])
+			$data    = html_entity_decode(strip_tags($data));
+		
 		switch ($param["type"]) {	
 			case "text"		:
-				$urldata["cht"] 	= "tx";
+				$urldata["cht"] 	= "p3";
 				$urldata["chs"]		= $optiondata["width"]."x".$optiondata["height"];
-				$urldata["chl"] 	= "\\text{".$data."}";
-				$urldata["chco"]	= $optiondata["textcolor"];
+				$urldata["chtt"] 	= $data;
+				$urldata["chts"]	= $optiondata["textcolor"];
 				$urldata["chf"]		= $optiondata["alpha"] ? "a,s,FF" : "bg,s,".$optiondata["backgroundcolor"];
 				break;
 
@@ -103,13 +106,12 @@ class fpx_imagetext_filter {
 				break;
 		}
 
-		// create has within the session and create the URL
-		$lcHash				= md5($data);
-		$urldata["chof"]	= "png";
-		
+		// create URL and has for the session data
 		// the &amp; code creates some errors in the Google call, so we subsitute it to &
-		$_SESSION[$lcHash] 	= str_replace("&amp;", "&", "https://chart.googleapis.com/chart?".http_build_query($urldata));
-		
+		$urldata["chof"]	= "png";
+		$urlparameter		= http_build_query($urldata);
+		$lcHash				= md5($urlparameter);
+		$_SESSION[$lcHash] 	= str_replace("&amp;", "&", "https://chart.googleapis.com/chart?".$urlparameter);
 
 		// create img tag only with hash
 		$lcReturn  = "<img src=\"".plugins_url("image.php?h=".$lcHash, __FILE__)."\"";
