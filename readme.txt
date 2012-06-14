@@ -2,7 +2,7 @@
 Contributors: flashpixx
 Tags: spam, secure, imprint, impressum, image, latex, text, qr code
 Requires at least: 2.7
-Tested up to: 3.3.2
+Tested up to: 3.4
 Stable tag: 0.4
 License: GPLv3
 
