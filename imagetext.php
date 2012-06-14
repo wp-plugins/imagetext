@@ -1,15 +1,24 @@
 <?php
-/*
-Plugin Name: Image Text
-Plugin URI: http://wordpress.org/extend/plugins/imagetext/
-Author URI: http://flashpixx.de/2010/02/wordpress-plugin-imagetext
-Description: With this plugin text can be shown as pictures within articles or pages so that they can not be indexed by spambots. The plugin uses the Google Chart API for creating the images. You can create images with text, LaTeX and QR code content.
-Version: 0.4
-Stable tag: 0.4
-Tested up to: 3.3.2
-Author: flashpixx
-License: GPLv3
-*/
+/** 
+ * #########################################################################
+ * # GPL License                                                           #
+ * #                                                                       #
+ * # This file is part of the Wordpress Imagetext plugin.                  #
+ * # Copyright (c) 2010, Philipp Kraus, <philipp.kraus@flashpixx.de>       #
+ * # This program is free software: you can redistribute it and/or modify  #
+ * # it under the terms of the GNU General Public License as published by  #
+ * # the Free Software Foundation, either version 3 of the License, or     #
+ * # (at your option) any later version.                                   #
+ * #                                                                       #
+ * # This program is distributed in the hope that it will be useful,       #
+ * # but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+ * # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+ * # GNU General Public License for more details.                          #
+ * #                                                                       #
+ * # You should have received a copy of the GNU General Public License     #
+ * # along with this program.  If not, see <http://www.gnu.org/licenses/>. #
+ * #########################################################################
+**/
 
 
 @require_once("render.class.php");
