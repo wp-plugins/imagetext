@@ -10,19 +10,43 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
 With this plugin text can be pasted as a picture in an article or page to protect mailaddresses or postaddresse against automated crawler.
 
+
+
 == Description ==
 
 With this plugin text can be pasted as a picture in an article or page. This is useful for text with personal data in order to protect against automated crawler. Each image can be individually 
 configured. Also the plugin can create latex formular and QR codes. The plugin uses the Google Chart API and the text content is protected, so it can't be found within the HTML code. The plugin
 has got also a widget for the theme, that can create an qr code with the permalink of the blog.
 
+
+
 == Installation ==
 
 1.  Upload the folder to the "/wp-content/plugins/" directory
 2.  Activate the plugin through the 'Plugins' menu in WordPress
-3.  Use in your content the tag [imgtxt type=] your image content [/imgtxt] to create images (options see at the plugin admin panel), on template files you can use the function (method) call
-    <code>de\flashpixx\imagetext\link::get("qrcode | text | latex", "your image content", [optional associative array with options eg: array("textcolor" => "ff0000")])</code> and the function
-    will return a full image tag
+
+
+    
+== Frequently Asked Questions ==
+
+= How can I use the plugin ? =
+Add to your content oof a page or article <pre>[imgtext type="latex | text | qrcode"]your content[/imgtxt]</pre>
+
+= How can I use the plugin within a template ? =
+You can call the method / function: <pre>de\flashpixx\imagetext\link::get( "latex | text | qrcode", "your content" )</pre>
+
+= Where can I find the image options ? =
+Take a look on the administration page of the plugin. Within the brackets [] you can find the option name, that can be passed
+to the imtxt-tag or as an associative array to the method / function call
+
+
+
+== Upgrade Notice ==
+
+= 0.5 =
+On this version the underlaying object-oriantated structure of the plugin uses the PHP namespaces, which added in the PHP version
+5.3.0. So the plugin equal or newer than 0.5 need PHP 5.3.0
+
 
 
 == Changelog == 
