@@ -45,7 +45,7 @@ to the imtxt-tag or as an associative array to the method / function call
 
 = 0.5 =
 On this version the underlaying object-oriantated structure of the plugin uses the PHP namespaces, which added in the PHP version
-5.3.0. So the plugin equal or newer than 0.5 need PHP 5.3.0
+5.3.0. So the plugin needs a PHP version equal or newer than PHP 5.3.0
 
 
 
