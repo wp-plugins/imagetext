@@ -28,9 +28,11 @@ Version: 0.4
 #########################################################################
 */
 
+namespace de\flashpixx\imagetext;
 
 @require_once("render.class.php");
 @require_once("filter.class.php");
+@require_once("link.class.php");
 @require_once("widget.class.php");
 
 // stop direct call
@@ -43,13 +45,13 @@ if (function_exists("load_plugin_textdomain"))
 
 
 // ==== create Wordpress Hooks =====================================================================================================================
-add_filter("the_content", "fpx_imagetext_filter::filter");
-add_action("init", "fpx_imagetext_filter::init");
-register_activation_hook(__FILE__,"fpx_imagetext_install");
-register_uninstall_hook(__FILE__, "fpx_imagetext_uninstall");
-add_action("admin_menu", "fpx_imagetext_render::adminmenu");
-add_action("admin_init", "fpx_imagetext_render::optionfields");
-add_action("widgets_init",  create_function("", "return register_widget(\"fpx_imagetext_qrcodewidget\");"));
+add_filter("the_content", "de\\flashpixx\\imagetext\\filter::run");
+add_action("init", "de\\flashpixx\\imagetext\\filter::init");
+register_activation_hook(__FILE__, "de\\flashpixx\\imagetext\\install");
+register_uninstall_hook(__FILE__, "de\\flashpixx\\imagetext\\uninstall");
+add_action("admin_menu", "de\\flashpixx\\imagetext\\render::adminmenu");
+add_action("admin_init", "de\\flashpixx\\imagetext\\render::optionfields");
+add_action("widgets_init", function(){ return register_widget("de\\flashpixx\\imagetext\\qrcodewidget"); });
 // =================================================================================================================================================
 
 
@@ -58,45 +60,48 @@ add_action("widgets_init",  create_function("", "return register_widget(\"fpx_im
 // ==== administration function ====================================================================================================================
 
 /** create the default options **/
-function fpx_imagetext_install() {
-	update_option("fpx_imagetext_option",
-	 	array(
-			"text"		=> array(
-				"alpha" 				=> true,
-				"alttext"				=> __("The text in this space was converted to guard against spam robots into an image", "fpx_imagetext"),
-				"backgroundcolor"		=> "FFFFFF",
-				"cssclass"				=> null,
-				"width"					=> 150,
-				"height"				=> 20,
-				"textcolor"				=> "000000",
-				"localoverridesglobal"	=> true,
-				"htmldecode"			=> true
-				),
-				
-			"latex"		=> array(
-				"alpha" 				=> true,
-				"alttext"				=> __("LaTeX formula"),
-				"cssclass"				=> null,
-				"localoverridesglobal"	=> true,
-				"textcolor"				=> "000000",
-				"backgroundcolor"		=> "FFFFFF",
-				"width"					=> 150,
-				"height"				=> 20
-			),
-			
-			"qrcode"	=> array(
-				"alttext"				=> __("QR code"),
-				"cssclass"				=> null,
-				"size"					=> 150,
-				"errorlevel"			=> "L",
-				"localoverridesglobal"	=> true,
-				"htmldecode"			=> true
-			)
-	));
+function install() {
+    $lxConfig = get_option("fpx_imagetext_option");
+    if (empty($lxConfig))
+        update_option("fpx_imagetext_option",
+            array(
+                "text"		=> array(
+                    "alpha" 				=> true,
+                    "alttext"				=> __("The text in this space was converted to guard against spam robots into an image", "fpx_imagetext"),
+                    "backgroundcolor"		=> "FFFFFF",
+                    "cssclass"				=> null,
+                    "width"					=> 150,
+                    "height"				=> 20,
+                    "textcolor"				=> "000000",
+                    "localoverridesglobal"	=> true,
+                    "htmldecode"			=> true
+                    ),
+                    
+                "latex"		=> array(
+                    "alpha" 				=> true,
+                    "alttext"				=> __("LaTeX formula"),
+                    "cssclass"				=> null,
+                    "localoverridesglobal"	=> true,
+                    "textcolor"				=> "000000",
+                    "backgroundcolor"		=> "FFFFFF",
+                    "width"					=> 150,
+                    "height"				=> 20
+                ),
+                
+                "qrcode"	=> array(
+                    "alttext"				=> __("QR code"),
+                    "cssclass"				=> null,
+                    "size"					=> 150,
+                    "errorlevel"			=> "L",
+                    "localoverridesglobal"	=> true,
+                    "htmldecode"			=> true
+                )
+            )
+        );
 }
 
 /** uninstall functions **/
-function fpx_imagetext_uninstall() {
+function uninstall() {
 	unregister_setting("fpx_imagetext_option", "fpx_imagetext_option");
 	delete_option("fpx_imagetext_option");
 }

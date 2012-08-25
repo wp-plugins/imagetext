@@ -19,13 +19,15 @@
  * # along with this program.  If not, see <http://www.gnu.org/licenses/>. #
  * #########################################################################
 **/
+    
+namespace de\flashpixx\imagetext;
 
 /** widget class **/
-class fpx_imagetext_qrcodewidget extends WP_Widget {
+class qrcodewidget extends \WP_Widget {
     
     /** constructor **/
-    function fpx_imagetext_qrcodewidget() {
-        parent::WP_Widget( false, "Image Text QR Code", array("description" => __("creates an image with the QR code of the page url", "fpx_imagetext")) );	
+    function __construct() {
+        parent::__construct( "fpx_imagetext_option", "Image Text QR Code", array("description" => __("creates an image with the QR code of the page url", "fpx_imagetext")) );	
     }
     
     /** overloaded widget method with output
@@ -45,7 +47,7 @@ class fpx_imagetext_qrcodewidget extends WP_Widget {
         $urldata["chf"]		= "a,s,FF";
         $urldata["chld"]	= $instance["errorlevel"];
 
-        echo "<img src=\"".$instance["apicall"]."://chart.googleapis.com/chart?".http_build_query($urldata)."\" ";
+        echo "<img src=\"https://chart.googleapis.com/chart?".http_build_query($urldata)."\" ";
         if (!empty($instance["alttext"]))
             echo "alttext=\"".$instance["alttext"]."\" ";
         if (!empty($instance["cssclass"]))
@@ -61,7 +63,6 @@ class fpx_imagetext_qrcodewidget extends WP_Widget {
         $old_instance["size"]        = abs( intval($new_instance["size"]) );
         $old_instance["alttext"]     = $new_instance["alttext"];
         $old_instance["cssclass"]    = $new_instance["cssclass"];
-        $old_instance["apicall"]     = $new_instance["apicall"];
         $old_instance["errorlevel"]  = $new_instance["errorlevel"];
         return $old_instance;
     }
@@ -73,7 +74,6 @@ class fpx_imagetext_qrcodewidget extends WP_Widget {
         echo "<p><label for=\"".$this->get_field_id("size")."\">".__("image size", "fpx_imagetext").":</label><br/><input name=\"".$this->get_field_name("size")."\" type=\"text\" value=\"".esc_attr($instance["size"])."\" /></p>";
         echo "<p><label for=\"".$this->get_field_id("alttext")."\">".__("alternate image text", "fpx_imagetext").":</label><br/><input name=\"".$this->get_field_name("alttext")."\" type=\"text\" value=\"".esc_attr($instance["alttext"])."\" /></p>";
         echo "<p><label for=\"".$this->get_field_id("cssclass")."\">".__("CSS class", "fpx_imagetext").":</label><br/><input name=\"".$this->get_field_name("cssclass")."\" type=\"text\" value=\"".esc_attr($instance["cssclass"])."\" /></p>";
-        echo "<p><label for=\"".$this->get_field_id("apicall")."\">".__("API call", "fpx_imagetext").":</label><br/><select name=\"".$this->get_field_name("apicall")."\"><option value=\"http\" ".(esc_attr($instance["apicall"]) == "http" ? "selected" : null).">".__("without secure connection (http)", "fpx_imagetext")."</option><option value=\"https\" ".(esc_attr($instance["apicall"]) == "https" ? "selected" : null).">".__("with secure connection (https)", "fpx_imagetext")."</option></select></p>";
         echo "<p><label for=\"".$this->get_field_id("errorlevel")."\">".__("error level", "fpx_imagetext").":</label><br/><select name=\"".$this->get_field_name("errorlevel")."\"><option value=\"L\" ".(esc_attr($instance["errorlevel"]) == "L" ? "selected" : null).">L (".__("recovery of up to 7% data loss", "fpx_imagetext").")</option><option value=\"M\" ".(esc_attr($instance["errorlevel"]) == "M" ? "selected" : null).">M (".__("recovery of up to 15% data loss", "fpx_imagetext").")</option><option value=\"Q\" ".(esc_attr($instance["errorlevel"]) == "Q" ? "selected" : null).">Q (".__("recovery of up to 25% data loss", "fpx_imagetext").")</option><option value=\"H\" ".(esc_attr($instance["errorlevel"]) == "H" ? "selected" : null).">H (".__("recovery of up to 30% data loss","fpx_imagetext").")</option></select></p>";
     }   
 
