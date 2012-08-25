@@ -23,21 +23,28 @@ has got also a widget for the theme, that can create an qr code with the permali
 == Installation ==
 
 1.  Upload the folder to the "/wp-content/plugins/" directory
-2.  Activate the plugin through the 'Plugins' menu in WordPress
+2.  Activate the plugin through the 'Plugins' menu in WordPress and take a look to the administration interface
 
 
     
 == Frequently Asked Questions ==
 
 = How can I use the plugin ? =
-Add to your content oof a page or article <pre>[imgtext type="latex | text | qrcode"]your content[/imgtxt]</pre>
+Add to your content of a page or article <pre>[imgtext type="latex | text | qrcode"]your content[/imgtxt]</pre>
 
 = How can I use the plugin within a template ? =
 You can call the method / function: <pre>de\flashpixx\imagetext\link::get( "latex | text | qrcode", "your content" )</pre>
+The method returns a string with the full image tag. The third parameter is optional and can be an associative array with
+options. The option names are shown in the administration interface
 
 = Where can I find the image options ? =
 Take a look on the administration page of the plugin. Within the brackets [] you can find the option name, that can be passed
 to the imtxt-tag or as an associative array to the method / function call
+
+= Can I add an image to a static HTML page ? =
+No you can not do this, because the image is created dynamically and a session value is passed to the image generation function.
+You need the session value, that is unique within the browser session and you need also read access to the session. The session
+can read only by the webserver (virtual host). So you can not pass any images between different domains or static pages.
 
 
 
