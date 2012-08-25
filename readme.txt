@@ -2,9 +2,11 @@
 Contributors: flashpixx
 Tags: spam, secure, imprint, impressum, image, latex, text, qr code
 Requires at least: 2.7
-Tested up to: 3.1.3
-Stable tag: trunk
-License: GPLv3
+Tested up to: 3.4
+Stable tag: 0.5
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WCRMFYTNCJRAU
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
 With this plugin text can be pasted as a picture in an article or page to protect mailaddresses or postaddresse against automated crawler.
 
@@ -18,17 +20,34 @@ has got also a widget for the theme, that can create an qr code with the permali
 
 1.  Upload the folder to the "/wp-content/plugins/" directory
 2.  Activate the plugin through the 'Plugins' menu in WordPress
-3.  Use in your content the tag [imgtxt] your image content [/imgtxt] to create images (other options see at the plugin admin panel).
+3.  Use in your content the tag [imgtxt type=] your image content [/imgtxt] to create images (options see at the plugin admin panel), on template files you can use the function (method) call
+    de\flashpixx\imagetext\link::get("qrcode | text | latex", "your image content", [optional associative array with options eg: array("textcolor" => "ff0000")]) and the function will return a full 
+    href tag
 
 
 == Changelog == 
+
+= 0.5 =
+* adding namespaces 
+* add template function: de\flashpixx\imagetext\link::get(...) returns the link to the image (thanks to Al Almor)
+* remove http(s) option field of the widget form
+
+= 0.4 =
+
+* fixing encoding error for eg hebrew (thanks to Hetz for reporting the problem)
+* change encoding calls to the multibyte (mb) calls
+* fixing hash problem (same text on the same page but different image types creates images with the last type only)
+* adding HTML tag remove option for QR and text image types
+
+= 0.35 =
+
+* fixing some array errors
 
 = 0.3 =
 
 * fully rewritten
 * uses Google Chart API
 * create text, latex and QR codes
-
 
 = 0.2 =
 

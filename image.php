@@ -4,7 +4,7 @@
  * # GPL License                                                           #
  * #                                                                       #
  * # This file is part of the Wordpress Imagetext plugin.                  #
- * # Copyright (c) 2010, Philipp Kraus, <philipp.kraus@flashpixx.de>       #
+ * # Copyright (c) 2010-2012, Philipp Kraus, <philipp.kraus@flashpixx.de>  #
  * # This program is free software: you can redistribute it and/or modify  #
  * # it under the terms of the GNU General Public License as published by  #
  * # the Free Software Foundation, either version 3 of the License, or     #
@@ -29,6 +29,9 @@
 if (!isset($_GET["h"]))
 	die("error");
 $lcHash = $_GET["h"];
+
+if (!isset($_SESSION[$lcHash]))
+    die("error");
 
 $url = $_SESSION[$lcHash];
 if ( (!is_string($url)) && (empty($url)) )
