@@ -4,7 +4,7 @@
  * # GPL License                                                           #
  * #                                                                       #
  * # This file is part of the Wordpress Imagetext plugin.                  #
- * # Copyright (c) 2010, Philipp Kraus, <philipp.kraus@flashpixx.de>       #
+ * # Copyright (c) 2010-2012, Philipp Kraus, <philipp.kraus@flashpixx.de>  #
  * # This program is free software: you can redistribute it and/or modify  #
  * # it under the terms of the GNU General Public License as published by  #
  * # the Free Software Foundation, either version 3 of the License, or     #
@@ -19,14 +19,16 @@
  * # along with this program.  If not, see <http://www.gnu.org/licenses/>. #
  * #########################################################################
 **/
+    
+namespace de\flashpixx\imagetext;
 
 
 /** class for creating all visual options **/
-class fpx_imagetext_render {
+class render {
 	
 	/** creates admin menu **/
 	static function adminmenu() {
-		add_options_page("Image Text Optionen", "Image Text", "administrator", "fpx_imagetext_option", get_class()."::render");
+		add_options_page("Image Text Optionen", "Image Text", "administrator", "fpx_imagetext_option", get_class()."::renderMain");
 	}
 	
 	
@@ -34,33 +36,37 @@ class fpx_imagetext_render {
 	static function optionfields() {
 		register_setting("fpx_imagetext_option", "fpx_imagetext_option", "fpx_imagetext_render::validate");
 		
+        
 		add_settings_section("fpx_imagetext_option",  __("Text Options", "fpx_imagetext"),                            get_class()."::render_textsection",              "fpx_imagetext_optiontext");
-		add_settings_field("text_alttext",            __("alternate image text", "fpx_imagetext")." (alttext)",       get_class()."::render_textalttext",              "fpx_imagetext_optiontext",    "fpx_imagetext_option");
-		add_settings_field("text_bgcol",              __("background color", "fpx_imagetext")." (backgroundcolor)",   get_class()."::render_textbgcol",                "fpx_imagetext_optiontext",    "fpx_imagetext_option");
-		add_settings_field("text_bgalpha",            __("transparant background color", "fpx_imagetext")." (alpha)", get_class()."::render_textalpha",                "fpx_imagetext_optiontext",    "fpx_imagetext_option");
-		add_settings_field("text_textcol",            __("text color", "fpx_imagetext")." (textcolor)",               get_class()."::render_textcol",                  "fpx_imagetext_optiontext",    "fpx_imagetext_option");
+		add_settings_field("text_alttext",            __("alternate image text", "fpx_imagetext")." (alttext)",       get_class()."::render_textalttext",              "fpx_imagetext_optiontext",      "fpx_imagetext_option");
+		add_settings_field("text_bgcol",              __("background color", "fpx_imagetext")." (backgroundcolor)",   get_class()."::render_textbgcol",                "fpx_imagetext_optiontext",      "fpx_imagetext_option");
+		add_settings_field("text_bgalpha",            __("transparant background color", "fpx_imagetext")." (alpha)", get_class()."::render_textalpha",                "fpx_imagetext_optiontext",      "fpx_imagetext_option");
+		add_settings_field("text_textcol",            __("text color", "fpx_imagetext")." (textcolor)",               get_class()."::render_textcol",                  "fpx_imagetext_optiontext",      "fpx_imagetext_option");
 		add_settings_field("text_css",                __("CSS class", "fpx_imagetext")." (cssclass)",                 get_class()."::render_textcss",                  "fpx_imagetext_optiontext",      "fpx_imagetext_option");
 		add_settings_field("text_width",              __("image width", "fpx_imagetext")." (width)",                  get_class()."::render_textwidth",                "fpx_imagetext_optiontext",      "fpx_imagetext_option");
 		add_settings_field("text_height",             __("image height", "fpx_imagetext")." (height)",                get_class()."::render_textheight",               "fpx_imagetext_optiontext",      "fpx_imagetext_option");
+		add_settings_field("text_htmldecode",         __("HTML code remove", "fpx_imagetext"). " (htmldecode)",       get_class()."::render_texthtmldecode",           "fpx_imagetext_optiontext",      "fpx_imagetext_option");
 		add_settings_field("text_localglobal",        __("options can be overwritten", "fpx_imagetext"),              get_class()."::render_textlocaloverridesglobal", "fpx_imagetext_optiontext",      "fpx_imagetext_option");
 
+        
 		add_settings_section("fpx_imagetext_option",  __("LaTeX Options", "fpx_imagetext"),                           get_class()."::render_latexsection",              "fpx_imagetext_optionlatex");
 		add_settings_field("latex_alttext",           __("alternate image text", "fpx_imagetext")." (alttext)",       get_class()."::render_latexalttext",              "fpx_imagetext_optionlatex",    "fpx_imagetext_option");
 		add_settings_field("latex_bgcol",             __("background color", "fpx_imagetext")." (backgroundcolor)",   get_class()."::render_latexbgcol",                "fpx_imagetext_optionlatex",    "fpx_imagetext_option");
 		add_settings_field("latex_bgalpha",           __("transparant background color", "fpx_imagetext")." (alpha)", get_class()."::render_latexalpha",                "fpx_imagetext_optionlatex",    "fpx_imagetext_option");
 		add_settings_field("latex_textcol",           __("text color", "fpx_imagetext")." (textcolor)",               get_class()."::render_latexcol",                  "fpx_imagetext_optionlatex",    "fpx_imagetext_option");
-		add_settings_field("latex_css",               __("CSS class", "fpx_imagetext")." (cssclass)",                 get_class()."::render_latexcss",                  "fpx_imagetext_optionlatex",      "fpx_imagetext_option");
-		add_settings_field("latex_width",             __("image width", "fpx_imagetext")." (width)",                  get_class()."::render_latexwidth",                "fpx_imagetext_optionlatex",      "fpx_imagetext_option");
-		add_settings_field("latex_height",            __("image height", "fpx_imagetext")." (height)",                get_class()."::render_latexheight",               "fpx_imagetext_optionlatex",      "fpx_imagetext_option");
-		add_settings_field("latex_localglobal",       __("options can be overwritten", "fpx_imagetext"),              get_class()."::render_latexlocaloverridesglobal", "fpx_imagetext_optionlatex",      "fpx_imagetext_option");		
+		add_settings_field("latex_css",               __("CSS class", "fpx_imagetext")." (cssclass)",                 get_class()."::render_latexcss",                  "fpx_imagetext_optionlatex",    "fpx_imagetext_option");
+		add_settings_field("latex_width",             __("image width", "fpx_imagetext")." (width)",                  get_class()."::render_latexwidth",                "fpx_imagetext_optionlatex",    "fpx_imagetext_option");
+		add_settings_field("latex_height",            __("image height", "fpx_imagetext")." (height)",                get_class()."::render_latexheight",               "fpx_imagetext_optionlatex",    "fpx_imagetext_option");
+		add_settings_field("latex_localglobal",       __("options can be overwritten", "fpx_imagetext"),              get_class()."::render_latexlocaloverridesglobal", "fpx_imagetext_optionlatex",    "fpx_imagetext_option");		
 
 
 		add_settings_section("fpx_imagetext_option",  __("QR Code Options", "fpx_imagetext"),                         get_class()."::render_qrcodesection",              "fpx_imagetext_optionqrcode");
-		add_settings_field("qrcode_alttext",          __("alternate image text", "fpx_imagetext")." (alttext)",       get_class()."::render_qrcodealttext",              "fpx_imagetext_optionqrcode",    "fpx_imagetext_option");
-		add_settings_field("qrcode_css",              __("CSS class", "fpx_imagetext")." (cssclass)",                 get_class()."::render_qrcodecss",                  "fpx_imagetext_optionqrcode",      "fpx_imagetext_option");
-		add_settings_field("qrcode_size",             __("image size", "fpx_imagetext")." (size)",                    get_class()."::render_qrcodesize",               "fpx_imagetext_optionqrcode",      "fpx_imagetext_option");
-		add_settings_field("qrcode_errlevel",         __("error level", "fpx_imagetext")." (errorlevel)",             get_class()."::render_qrcodeerrlevel",               "fpx_imagetext_optionqrcode",      "fpx_imagetext_option");
-		add_settings_field("qrcode_localglobal",      __("options can be overwritten", "fpx_imagetext"),              get_class()."::render_qrcodelocaloverridesglobal", "fpx_imagetext_optionqrcode",      "fpx_imagetext_option");		
+		add_settings_field("qrcode_alttext",          __("alternate image text", "fpx_imagetext")." (alttext)",       get_class()."::render_qrcodealttext",              "fpx_imagetext_optionqrcode",  "fpx_imagetext_option");
+		add_settings_field("qrcode_css",              __("CSS class", "fpx_imagetext")." (cssclass)",                 get_class()."::render_qrcodecss",                  "fpx_imagetext_optionqrcode",  "fpx_imagetext_option");
+		add_settings_field("qrcode_size",             __("image size", "fpx_imagetext")." (size)",                    get_class()."::render_qrcodesize",                 "fpx_imagetext_optionqrcode",  "fpx_imagetext_option");
+		add_settings_field("qrcode_errlevel",         __("error level", "fpx_imagetext")." (errorlevel)",             get_class()."::render_qrcodeerrlevel",             "fpx_imagetext_optionqrcode",  "fpx_imagetext_option");
+		add_settings_field("qrcode_htmldecode",       __("HTML code remove", "fpx_imagetext"). " (htmldecode)",       get_class()."::render_qrcodehtmldecode",           "fpx_imagetext_optionqrcode",  "fpx_imagetext_option");
+		add_settings_field("qrcode_localglobal",      __("options can be overwritten", "fpx_imagetext"),              get_class()."::render_qrcodelocaloverridesglobal", "fpx_imagetext_optionqrcode",  "fpx_imagetext_option");		
 
 	}
 	
@@ -76,7 +82,7 @@ class fpx_imagetext_render {
     
 	static function validate($pa) {
 		//print_r($pa);
-		//die("xx");
+		//die(" ");
 		
 		$options = get_option("fpx_imagetext_option");
 		
@@ -89,6 +95,7 @@ class fpx_imagetext_render {
 		$options["text"]["width"]					= abs(intval($pa["text_width"]));
 		$options["text"]["height"]					= abs(intval($pa["text_height"]));
 		$options["text"]["localoverridesglobal"]	= !empty($pa["text_localoverridesglobal"]);
+		$options["text"]["htmldecode"]				= !empty($pa["text_htmldecode"]);
 		
 		// latex options
 		$options["latex"]["alttext"] 				= $pa["latex_alttext"];
@@ -106,21 +113,15 @@ class fpx_imagetext_render {
 		$options["qrcode"]["errorlevel"]			= $pa["qrcode_errlevel"];
 		$options["qrcode"]["size"]					= abs(intval($pa["qrcode_size"]));
 		$options["qrcode"]["localoverridesglobal"]	= !empty($pa["qrcode_localoverridesglobal"]);
+		$options["qrcode"]["htmldecode"]			= !empty($pa["qrcode_htmldecode"]);
 		
 		return $options;
 	}
 
 
 	/** render the option page **/
-	static function render() {
+	static function renderMain() {
 		echo "<div class=\"wrap\"><h2>Image Text ".__("Configuration and Usage", "fpx_imagetext")."</h2>\n";
-		echo "<p>".__("If you like the plugin and want to support my work, I'd appreciate a donation through the following link very much. A donation encouraged me to develop my work further and to thank you again and again so the community.", "fpx_imagetext")."\n";
-		echo "<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\"> \n";
-		echo "<input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\"/> \n";
-		echo "<input type=\"hidden\" name=\"hosted_button_id\" value=\"RMZVY3WHSL6ZY\"/> \n";
-		echo "<input type=\"image\" src=\"https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online.\"/></form></p>\n\n"; 
-		echo "<hr> \n\n";
-
         echo "<p>".__("The following options may also be passed as parameters to the opening tag to adjust the current formatting. If no parameters are specified in the tags, the global values are used. In parenthesis the parameter name is specified. The use is then: <strong>[imgtxt parameter=value parameter=value ...]</strong>.", "fpx_imagetext")."</p>";
 		echo "<form method=\"post\" action=\"options.php\">";
 		settings_fields("fpx_imagetext_option");
@@ -171,6 +172,11 @@ class fpx_imagetext_render {
     static function render_textwidth() {
         $options = get_option("fpx_imagetext_option");
         echo "<input name=\"fpx_imagetext_option[text_width]\" size=\"10\" type=\"text\" value=\"".$options["text"]["width"]."\" />";        
+    }
+
+    static function render_texthtmldecode() {
+        $options = get_option("fpx_imagetext_option");
+        echo "<input name=\"fpx_imagetext_option[text_htmldecode]\" type=\"checkbox\" value=\"1\" ".($options["text"]["htmldecode"] ? "checked" : null)." />";
     }
     
     static function render_textlocaloverridesglobal() {
@@ -255,6 +261,11 @@ class fpx_imagetext_render {
         echo "<option value=\"Q\" ".($options["qrcode"]["errorlevel"] == "Q" ? "selected" : null).">Q (".__("recovery of up to 25% data loss", "fpx_imagetext").")</option>";
         echo "<option value=\"H\" ".($options["qrcode"]["errorlevel"] == "H" ? "selected" : null).">H (".__("recovery of up to 30% data loss", "fpx_imagetext").")</option>";
         echo "</select>";
+    }
+
+    static function render_qrcodehtmldecode() {
+        $options = get_option("fpx_imagetext_option");
+        echo "<input name=\"fpx_imagetext_option[qrcode_htmldecode]\" type=\"checkbox\" value=\"1\" ".($options["qrcode"]["htmldecode"] ? "checked" : null)." />";
     }
 
     static function render_qrcodelocaloverridesglobal() {
