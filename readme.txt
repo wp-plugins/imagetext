@@ -3,7 +3,7 @@ Contributors: flashpixx
 Tags: spam, secure, imprint, impressum, image, latex, text, qr code
 Requires at least: 2.7
 Tested up to: 3.4
-Stable tag: 0.5
+Stable tag: 0.55
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WCRMFYTNCJRAU
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -26,6 +26,9 @@ has got also a widget for the theme, that can create an qr code with the permali
 
 
 == Changelog == 
+
+= 0.55 =
+* fixing a syntax error
 
 = 0.5 =
 * adding namespaces 

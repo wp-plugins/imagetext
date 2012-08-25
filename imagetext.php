@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/imagetext/
 Author URI: http://flashpixx.de/2010/02/wordpress-plugin-imagetext
 Description: With this plugin text can be shown as pictures within articles or pages so that they can not be indexed by spambots. The plugin uses the Google Chart API for creating the images. You can create images with text, LaTeX and QR code content.
 Author: flashpixx
-Version: 0.5
+Version: 0.55
 
 
 #########################################################################
