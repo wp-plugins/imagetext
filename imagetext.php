@@ -35,6 +35,7 @@ namespace de\flashpixx\imagetext;
 @require_once("link.class.php");
 @require_once("widget.class.php");
 
+  
 // stop direct call
 if (preg_match("#" . basename(__FILE__) . "#", $_SERVER["PHP_SELF"])) { die("You are not allowed to call this page directly."); }
 
