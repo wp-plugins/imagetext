@@ -22,7 +22,7 @@ has got also a widget for the theme, that can create an qr code with the permali
 2.  Activate the plugin through the 'Plugins' menu in WordPress
 3.  Use in your content the tag [imgtxt type=] your image content [/imgtxt] to create images (options see at the plugin admin panel), on template files you can use the function (method) call
     de\flashpixx\imagetext\link::get("qrcode | text | latex", "your image content", [optional associative array with options eg: array("textcolor" => "ff0000")]) and the function will return a full 
-    href tag
+    image tag
 
 
 == Changelog == 
@@ -31,7 +31,7 @@ has got also a widget for the theme, that can create an qr code with the permali
 * fixing a syntax error
 
 = 0.5 =
-* adding namespaces 
+* adding namespaces (supports with PHP 5.3.0)
 * add template function: de\flashpixx\imagetext\link::get(...) returns the link to the image (thanks to Al Almor)
 * remove http(s) option field of the widget form
 
