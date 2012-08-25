@@ -21,8 +21,8 @@ has got also a widget for the theme, that can create an qr code with the permali
 1.  Upload the folder to the "/wp-content/plugins/" directory
 2.  Activate the plugin through the 'Plugins' menu in WordPress
 3.  Use in your content the tag [imgtxt type=] your image content [/imgtxt] to create images (options see at the plugin admin panel), on template files you can use the function (method) call
-    de\flashpixx\imagetext\link::get("qrcode | text | latex", "your image content", [optional associative array with options eg: array("textcolor" => "ff0000")]) and the function will return a full 
-    image tag
+    <code>de\flashpixx\imagetext\link::get("qrcode | text | latex", "your image content", [optional associative array with options eg: array("textcolor" => "ff0000")])</code> and the function
+    will return a full image tag
 
 
 == Changelog == 
