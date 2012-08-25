@@ -28,7 +28,7 @@ class render {
 	
 	/** creates admin menu **/
 	static function adminmenu() {
-		add_options_page("Image Text Optionen", "Image Text", "administrator", "fpx_imagetext_option", get_class()."::render");
+		add_options_page("Image Text Optionen", "Image Text", "administrator", "fpx_imagetext_option", get_class()."::renderMain");
 	}
 	
 	
@@ -120,7 +120,7 @@ class render {
 
 
 	/** render the option page **/
-	static function render() {
+	static function renderMain() {
 		echo "<div class=\"wrap\"><h2>Image Text ".__("Configuration and Usage", "fpx_imagetext")."</h2>\n";
         echo "<p>".__("The following options may also be passed as parameters to the opening tag to adjust the current formatting. If no parameters are specified in the tags, the global values are used. In parenthesis the parameter name is specified. The use is then: <strong>[imgtxt parameter=value parameter=value ...]</strong>.", "fpx_imagetext")."</p>";
 		echo "<form method=\"post\" action=\"options.php\">";
