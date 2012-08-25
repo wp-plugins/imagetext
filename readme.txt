@@ -3,12 +3,14 @@ Contributors: flashpixx
 Tags: spam, secure, imprint, impressum, image, latex, text, qr code
 Requires at least: 2.7
 Tested up to: 3.4
-Stable tag: 0.5
+Stable tag: 0.55
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WCRMFYTNCJRAU
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
 With this plugin text can be pasted as a picture in an article or page to protect mailaddresses or postaddresse against automated crawler.
+
+
 
 == Description ==
 
@@ -16,19 +18,41 @@ With this plugin text can be pasted as a picture in an article or page. This is 
 configured. Also the plugin can create latex formular and QR codes. The plugin uses the Google Chart API and the text content is protected, so it can't be found within the HTML code. The plugin
 has got also a widget for the theme, that can create an qr code with the permalink of the blog.
 
+
+
 == Installation ==
 
 1.  Upload the folder to the "/wp-content/plugins/" directory
 2.  Activate the plugin through the 'Plugins' menu in WordPress
-3.  Use in your content the tag [imgtxt type=] your image content [/imgtxt] to create images (options see at the plugin admin panel), on template files you can use the function (method) call
-    de\flashpixx\imagetext\link::get("qrcode | text | latex", "your image content", [optional associative array with options eg: array("textcolor" => "ff0000")]) and the function will return a full 
-    href tag
+
+
+    
+== Frequently Asked Questions ==
+
+= How can I use the plugin ? =
+Add to your content oof a page or article <pre>[imgtext type="latex | text | qrcode"]your content[/imgtxt]</pre>
+
+= How can I use the plugin within a template ? =
+You can call the method / function: <pre>de\flashpixx\imagetext\link::get( "latex | text | qrcode", "your content" )</pre>
+
+= Where can I find the image options ? =
+Take a look on the administration page of the plugin. Within the brackets [] you can find the option name, that can be passed
+to the imtxt-tag or as an associative array to the method / function call
+
+
+
+== Upgrade Notice ==
+
+= 0.5 =
+On this version the underlaying object-oriantated structure of the plugin uses the PHP namespaces, which added in the PHP version
+5.3.0. So the plugin needs a PHP version equal or newer than PHP 5.3.0
+
 
 
 == Changelog == 
 
 = 0.5 =
-* adding namespaces 
+* adding namespaces (supports with PHP 5.3.0)
 * add template function: de\flashpixx\imagetext\link::get(...) returns the link to the image (thanks to Al Almor)
 * remove http(s) option field of the widget form
 
