@@ -8,8 +8,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
-With this plugin text can be pasted as a picture in an article or page to protect mailaddresses or postaddresse against automated crawler.
 
+With this plugin text can be pasted as a picture in an article or page to protect mailaddresses or postaddresse against automated crawler.
 
 
 == Description ==
@@ -46,12 +46,15 @@ No you can not do this, because the image is created dynamically and a session v
 You need the session value, that is unique within the browser session and you need also read access to the session. The session
 can read only by the webserver (virtual host). So you can not pass any images between different domains or static pages.
 
+= Does the plugin need any requirements ? =
+The underlaying object-orientated structure of the plugin uses the PHP namespaces, which added in the PHP version 5.3.0.
+So the plugin needs a PHP version equal or newer than PHP 5.3.0
 
 
 == Upgrade Notice ==
 
 = 0.5 =
-On this version the underlaying object-oriantated structure of the plugin uses the PHP namespaces, which added in the PHP version
+On this version the underlaying object-orientated structure of the plugin uses the PHP namespaces, which added in the PHP version
 5.3.0. So the plugin needs a PHP version equal or newer than PHP 5.3.0
 
 
