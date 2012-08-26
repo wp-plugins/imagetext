@@ -80,10 +80,11 @@ class render {
 	}
 	
     
+    /** validate the form input 
+     * @param $pa form data
+     * @return validated data
+     **/
 	static function validate($pa) {
-		//print_r($pa);
-		//die(" ");
-		
 		$options = get_option("fpx_imagetext_option");
 		
 		// text options
