@@ -34,7 +34,7 @@ class render {
 	
 	/** shows the admin panel with actions **/
 	static function optionfields() {
-		register_setting("fpx_imagetext_option", "fpx_imagetext_option", "fpx_imagetext_render::validate");
+		register_setting("fpx_imagetext_option", "fpx_imagetext_option", get_class()."::validate");
 		
         
 		add_settings_section("fpx_imagetext_option",  __("Text Options", "fpx_imagetext"),                            get_class()."::render_textsection",              "fpx_imagetext_optiontext");
