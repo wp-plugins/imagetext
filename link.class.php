@@ -91,7 +91,7 @@ class link {
 		$_SESSION[$lcHash] 	= str_replace("&amp;", "&", "https://chart.googleapis.com/chart?".$urlparameter);
         
 		// create img tag only with hash
-		$lcReturn  = "<img src=\"".plugins_url("image.php?h=".$lcHash, __FILE__)."\"";
+		$lcReturn  = "<img src=\"".plugins_url("image.php?h=".$lcHash, LOCALPLUGINFILE)."\"";
         if (!empty($optiondata["alttext"]))
             $lcReturn .= " alt=\"".wp_specialchars($optiondata["alttext"])."\"";
 		if (!empty($optiondata["cssclass"]))

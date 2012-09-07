@@ -29,27 +29,35 @@ Version: 0.55
 **/
 
 namespace de\flashpixx\imagetext;
+    
+// ==== constant for developing with the correct path of the plugin ================================================================================
+//define(__NAMESPACE__."\LOCALPLUGINFILE", __FILE__);
+define(__NAMESPACE__."\LOCALPLUGINFILE", WP_PLUGIN_DIR."/imagetext/".basename(__FILE__));
+// =================================================================================================================================================
 
+    
+    
+// ==== plugin initialization ======================================================================================================================
 @require_once("render.class.php");
 @require_once("filter.class.php");
 @require_once("link.class.php");
 @require_once("widget.class.php");
 
-  
 // stop direct call
-if (preg_match("#" . basename(__FILE__) . "#", $_SERVER["PHP_SELF"])) { die("You are not allowed to call this page directly."); }
+if (preg_match("#" . basename(LOCALPLUGINFILE) . "#", $_SERVER["PHP_SELF"])) { die("You are not allowed to call this page directly."); }
 
 // translation
 if (function_exists("load_plugin_textdomain"))
-	load_plugin_textdomain("fpx_imagetext", false, dirname(plugin_basename(__FILE__))."/lang");
-
+	load_plugin_textdomain("fpx_imagetext", false, dirname(plugin_basename(LOCALPLUGINFILE))."/lang");
+// =================================================================================================================================================  
+    
 
 
 // ==== create Wordpress Hooks =====================================================================================================================
 add_filter("the_content", "de\\flashpixx\\imagetext\\filter::run");
 add_action("init", "de\\flashpixx\\imagetext\\filter::init");
-register_activation_hook(__FILE__, "de\\flashpixx\\imagetext\\install");
-register_uninstall_hook(__FILE__, "de\\flashpixx\\imagetext\\uninstall");
+register_activation_hook(LOCALPLUGINFILE, "de\\flashpixx\\imagetext\\install");
+register_uninstall_hook(LOCALPLUGINFILE, "de\\flashpixx\\imagetext\\uninstall");
 add_action("admin_menu", "de\\flashpixx\\imagetext\\render::adminmenu");
 add_action("admin_init", "de\\flashpixx\\imagetext\\render::optionfields");
 add_action("widgets_init", function(){ return register_widget("de\\flashpixx\\imagetext\\qrcodewidget"); });
