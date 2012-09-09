@@ -2,7 +2,7 @@
 Contributors: flashpixx
 Tags: spam, secure, imprint, impressum, image, latex, text, qr code
 Requires at least: 3.2
-Tested up to: 3.4.1
+Tested up to: 3.4.2
 Stable tag: 0.55
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WCRMFYTNCJRAU
 License: GPLv3 or later
