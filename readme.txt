@@ -63,10 +63,16 @@ On this version the underlaying object-orientated structure of the plugin uses t
 
 == Changelog == 
 
+= 0.6 =
+
+* change language domain to "imagetext"
+
 = 0.55 =
+
 * fixing a syntax error
 
 = 0.5 =
+
 * adding namespaces (supports with PHP 5.3.0)
 * add template function: de\flashpixx\imagetext\link::get(...) returns the link to the image (thanks to Al Almor)
 * remove http(s) option field of the widget form

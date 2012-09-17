@@ -27,7 +27,7 @@ class qrcodewidget extends \WP_Widget {
     
     /** constructor **/
     function __construct() {
-        parent::__construct( "fpx_imagetext_option", "Image Text QR Code", array("description" => __("creates an image with the QR code of the page url", "fpx_imagetext")) );	
+        parent::__construct( "fpx_imagetext_option", "Image Text QR Code", array("description" => __("creates an image with the QR code of the page url", "imagetext")) );	
     }
     
     /** overloaded widget method with output
@@ -71,10 +71,10 @@ class qrcodewidget extends \WP_Widget {
      * @param $instance widget instance
     **/
     function form($instance) {
-        echo "<p><label for=\"".$this->get_field_id("size")."\">".__("image size", "fpx_imagetext").":</label><br/><input name=\"".$this->get_field_name("size")."\" type=\"text\" value=\"".esc_attr($instance["size"])."\" /></p>";
-        echo "<p><label for=\"".$this->get_field_id("alttext")."\">".__("alternate image text", "fpx_imagetext").":</label><br/><input name=\"".$this->get_field_name("alttext")."\" type=\"text\" value=\"".esc_attr($instance["alttext"])."\" /></p>";
-        echo "<p><label for=\"".$this->get_field_id("cssclass")."\">".__("CSS class", "fpx_imagetext").":</label><br/><input name=\"".$this->get_field_name("cssclass")."\" type=\"text\" value=\"".esc_attr($instance["cssclass"])."\" /></p>";
-        echo "<p><label for=\"".$this->get_field_id("errorlevel")."\">".__("error level", "fpx_imagetext").":</label><br/><select name=\"".$this->get_field_name("errorlevel")."\"><option value=\"L\" ".(esc_attr($instance["errorlevel"]) == "L" ? "selected" : null).">L (".__("recovery of up to 7% data loss", "fpx_imagetext").")</option><option value=\"M\" ".(esc_attr($instance["errorlevel"]) == "M" ? "selected" : null).">M (".__("recovery of up to 15% data loss", "fpx_imagetext").")</option><option value=\"Q\" ".(esc_attr($instance["errorlevel"]) == "Q" ? "selected" : null).">Q (".__("recovery of up to 25% data loss", "fpx_imagetext").")</option><option value=\"H\" ".(esc_attr($instance["errorlevel"]) == "H" ? "selected" : null).">H (".__("recovery of up to 30% data loss","fpx_imagetext").")</option></select></p>";
+        echo "<p><label for=\"".$this->get_field_id("size")."\">".__("image size", "imagetext").":</label><br/><input name=\"".$this->get_field_name("size")."\" type=\"text\" value=\"".esc_attr($instance["size"])."\" /></p>";
+        echo "<p><label for=\"".$this->get_field_id("alttext")."\">".__("alternate image text", "imagetext").":</label><br/><input name=\"".$this->get_field_name("alttext")."\" type=\"text\" value=\"".esc_attr($instance["alttext"])."\" /></p>";
+        echo "<p><label for=\"".$this->get_field_id("cssclass")."\">".__("CSS class", "imagetext").":</label><br/><input name=\"".$this->get_field_name("cssclass")."\" type=\"text\" value=\"".esc_attr($instance["cssclass"])."\" /></p>";
+        echo "<p><label for=\"".$this->get_field_id("errorlevel")."\">".__("error level", "imagetext").":</label><br/><select name=\"".$this->get_field_name("errorlevel")."\"><option value=\"L\" ".(esc_attr($instance["errorlevel"]) == "L" ? "selected" : null).">L (".__("recovery of up to 7% data loss", "imagetext").")</option><option value=\"M\" ".(esc_attr($instance["errorlevel"]) == "M" ? "selected" : null).">M (".__("recovery of up to 15% data loss", "imagetext").")</option><option value=\"Q\" ".(esc_attr($instance["errorlevel"]) == "Q" ? "selected" : null).">Q (".__("recovery of up to 25% data loss", "imagetext").")</option><option value=\"H\" ".(esc_attr($instance["errorlevel"]) == "H" ? "selected" : null).">H (".__("recovery of up to 30% data loss","imagetext").")</option></select></p>";
     }   
 
 }

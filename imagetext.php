@@ -48,7 +48,7 @@ if (preg_match("#" . basename(LOCALPLUGINFILE) . "#", $_SERVER["PHP_SELF"])) { d
 
 // translation
 if (function_exists("load_plugin_textdomain"))
-	load_plugin_textdomain("fpx_imagetext", false, dirname(plugin_basename(LOCALPLUGINFILE))."/lang");
+	load_plugin_textdomain("imagetext", false, dirname(plugin_basename(LOCALPLUGINFILE))."/lang");
 // =================================================================================================================================================  
     
 
@@ -76,7 +76,7 @@ function install() {
             array(
                 "text"		=> array(
                     "alpha" 				=> true,
-                    "alttext"				=> __("The text in this space was converted to guard against spam robots into an image", "fpx_imagetext"),
+                    "alttext"				=> __("The text in this space was converted to guard against spam robots into an image", "imagetext"),
                     "backgroundcolor"		=> "FFFFFF",
                     "cssclass"				=> null,
                     "width"					=> 150,
