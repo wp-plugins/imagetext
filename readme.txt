@@ -18,6 +18,13 @@ With this plugin text can be pasted as a picture in an article or page. This is 
 configured. Also the plugin can create latex formular and QR codes. The plugin uses the Google Chart API and the text content is protected, so it can't be found within the HTML code. The plugin
 has got also a widget for the theme, that can create an qr code with the permalink of the blog.
 
+= Features =
+
+* creating QR codes and LaTeX formular
+* plugin call can be used within your templates
+* generate images with a free size, color, content
+* free definition for the image tag
+
 
 
 == Installation ==
@@ -26,14 +33,17 @@ has got also a widget for the theme, that can create an qr code with the permali
 2.  Activate the plugin through the 'Plugins' menu in WordPress and take a look to the administration interface
 
 
+
 == Requirements ==
 
 * Wordpress 3.2 or newer
 * PHP 5.3.0 or newer 
 
 
+
 == Shortcode ==
 Add to your content of a page or article <pre>[imgtext type="latex | text | qrcode"]your content[/imgtxt]</pre>
+
     
     
 == Frequently Asked Questions ==
@@ -51,6 +61,7 @@ to the imtxt-tag or as an associative array to the method / function call
 No you can not do this, because the image is created dynamically and a session value is passed to the image generation function.
 You need the session value, that is unique within the browser session and you need also read access to the session. The session
 can read only by the webserver (virtual host). So you can not pass any images between different domains or static pages.
+
 
 
 == Upgrade Notice ==
