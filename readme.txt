@@ -2,7 +2,7 @@
 Contributors: flashpixx
 Tags: spam, secure, imprint, impressum, image, latex, text, qr code
 Requires at least: 3.2
-Tested up to: 3.4.1
+Tested up to: 3.4.2
 Stable tag: 0.55
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WCRMFYTNCJRAU
 License: GPLv3 or later
@@ -18,6 +18,13 @@ With this plugin text can be pasted as a picture in an article or page. This is 
 configured. Also the plugin can create latex formular and QR codes. The plugin uses the Google Chart API and the text content is protected, so it can't be found within the HTML code. The plugin
 has got also a widget for the theme, that can create an qr code with the permalink of the blog.
 
+= Features =
+
+* creating QR codes and LaTeX formular
+* plugin call can be used within your templates
+* generate images with a free size, color, content
+* free definition for the image tag
+
 
 
 == Installation ==
@@ -26,14 +33,17 @@ has got also a widget for the theme, that can create an qr code with the permali
 2.  Activate the plugin through the 'Plugins' menu in WordPress and take a look to the administration interface
 
 
+
 == Requirements ==
 
 * Wordpress 3.2 or newer
 * PHP 5.3.0 or newer 
 
 
+
 == Shortcode ==
 Add to your content of a page or article <pre>[imgtext type="latex | text | qrcode"]your content[/imgtxt]</pre>
+
     
     
 == Frequently Asked Questions ==
@@ -53,6 +63,7 @@ You need the session value, that is unique within the browser session and you ne
 can read only by the webserver (virtual host). So you can not pass any images between different domains or static pages.
 
 
+
 == Upgrade Notice ==
 
 = 0.5 =
@@ -63,10 +74,16 @@ On this version the underlaying object-orientated structure of the plugin uses t
 
 == Changelog == 
 
+= 0.6 =
+
+* change language domain to "imagetext"
+
 = 0.55 =
+
 * fixing a syntax error
 
 = 0.5 =
+
 * adding namespaces (supports with PHP 5.3.0)
 * add template function: de\flashpixx\imagetext\link::get(...) returns the link to the image (thanks to Al Almor)
 * remove http(s) option field of the widget form
